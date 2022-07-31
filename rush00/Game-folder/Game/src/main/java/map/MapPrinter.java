@@ -1,0 +1,89 @@
+package map;
+
+import com.diogonunes.jcolor.Ansi;
+import com.diogonunes.jcolor.Attribute;
+import config.Characters;
+import config.Colors;
+import config.Configuration;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class MapPrinter {
+
+    private List<ArrayList<Character>> map;
+    private Configuration config;
+
+    public MapPrinter(List<ArrayList<Character>> map, Configuration config) {
+        this.map = map;
+        this.config = config;
+    }
+
+    public void printMap() throws IOException {
+        for (List<Character> it : map) {
+            for (char ch : it) {
+                System.out.print(Ansi.colorize((ch + ""), getColor(colorOfWichChar(ch))));
+            }
+            System.out.println();
+        }
+    }
+
+    private String colorOfWichChar(char ch) {
+
+        Colors colors = config.getColors();
+        Characters characters = config.getCharacters();
+
+        if (ch == characters.getEmpty()) {
+            return colors.getEmpty();
+        } else if (ch == characters.getWall()) {
+            return  colors.getWall();
+        } else if (ch == characters.getEnemy()) {
+            return colors.getEnemy();
+        } else if (ch == characters.getGoal()) {
+            return colors.getGoal();
+        } else {
+            return colors.getPlayer();
+        }
+    }
+
+    private Attribute getColor(String color) throws IOException {
+        switch (color) {
+            case "BLACK":
+                return Attribute.BLACK_BACK();
+            case "BLUE":
+                return Attribute.BLUE_BACK();
+            case "BRIGHT_BLACK":
+                return Attribute.BRIGHT_BLACK_BACK();
+            case "BRIGHT_BLUE":
+                return Attribute.BRIGHT_BLUE_BACK();
+            case "BRIGHT_CYAN":
+                return Attribute.BRIGHT_CYAN_BACK();
+            case "BRIGHT_GREEN":
+                return Attribute.BRIGHT_GREEN_BACK();
+            case "BRIGHT_MAGENTA":
+                return Attribute.BRIGHT_MAGENTA_BACK();
+            case "BRIGHT_RED":
+                return Attribute.BRIGHT_RED_BACK();
+            case "BRIGHT_WHITE":
+                return Attribute.BRIGHT_WHITE_BACK();
+            case "BRIGHT_YELLOW":
+                return Attribute.BRIGHT_YELLOW_BACK();
+            case "CYAN":
+                return Attribute.CYAN_BACK();
+            case "GREEN":
+                return Attribute.GREEN_BACK();
+            case "MAGENTA":
+                return Attribute.MAGENTA_BACK();
+            case "RED":
+                return Attribute.RED_BACK();
+            case "WHITE":
+                return Attribute.WHITE_BACK();
+            case "YELLOW":
+                return Attribute.YELLOW_BACK();
+        }
+        throw new IOException("Wrong color!");
+    }
+
+}

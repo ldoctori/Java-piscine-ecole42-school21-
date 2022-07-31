@@ -1,0 +1,9 @@
+/home/ldoctori/Desktop/piscine_java/day09/ex00/Chat/Server/src/main/java/school21/spring/sockets/config/ApplicationConfig.java
+/home/ldoctori/Desktop/piscine_java/day09/ex00/Chat/Server/src/main/java/school21/spring/sockets/models/User.java
+/home/ldoctori/Desktop/piscine_java/day09/ex00/Chat/Server/src/main/java/school21/spring/sockets/repositories/CrudRepository.java
+/home/ldoctori/Desktop/piscine_java/day09/ex00/Chat/Server/src/main/java/school21/spring/sockets/repositories/UsersRepositoryJdbc.java
+/home/ldoctori/Desktop/piscine_java/day09/ex00/Chat/Server/src/main/java/school21/spring/sockets/app/Main.java
+/home/ldoctori/Desktop/piscine_java/day09/ex00/Chat/Server/src/main/java/school21/spring/sockets/repositories/UsersRepository.java
+/home/ldoctori/Desktop/piscine_java/day09/ex00/Chat/Server/src/main/java/school21/spring/sockets/services/UsersService.java
+/home/ldoctori/Desktop/piscine_java/day09/ex00/Chat/Server/src/main/java/school21/spring/sockets/services/UsersServiceImpl.java
+/home/ldoctori/Desktop/piscine_java/day09/ex00/Chat/Server/src/main/java/school21/spring/sockets/server/Server.java

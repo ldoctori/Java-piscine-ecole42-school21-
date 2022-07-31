@@ -1,0 +1,9 @@
+/home/ldoctori/Desktop/piscine_java/day08/ex02/Service/src/main/java/school21/spring/service/config/ApplicationConfig.java
+/home/ldoctori/Desktop/piscine_java/day08/ex02/Service/src/main/java/school21/spring/service/application/Main.java
+/home/ldoctori/Desktop/piscine_java/day08/ex02/Service/src/main/java/school21/spring/service/services/UsersService.java
+/home/ldoctori/Desktop/piscine_java/day08/ex02/Service/src/main/java/school21/spring/service/repositories/UsersRepositoryJdbcTemplate.java
+/home/ldoctori/Desktop/piscine_java/day08/ex02/Service/src/main/java/school21/spring/service/repositories/UsersRepository.java
+/home/ldoctori/Desktop/piscine_java/day08/ex02/Service/src/main/java/school21/spring/service/repositories/UsersRepositoryJdbcImpl.java
+/home/ldoctori/Desktop/piscine_java/day08/ex02/Service/src/main/java/school21/spring/service/repositories/CrudRepository.java
+/home/ldoctori/Desktop/piscine_java/day08/ex02/Service/src/main/java/school21/spring/service/models/User.java
+/home/ldoctori/Desktop/piscine_java/day08/ex02/Service/src/main/java/school21/spring/service/services/UsersServiceImpl.java

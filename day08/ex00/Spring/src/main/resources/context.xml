@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="preProcToLower" class="classes.PreProcessorToLowerImpl"></bean>
+    <bean id="preProcToUpper" class="classes.PreProcessorToUpperImpl"></bean>
+
+    <bean id = "rendererErrToUpper" class="classes.RendererErrImpl">
+        <constructor-arg ref="preProcToUpper"></constructor-arg>
+    </bean>
+    <bean id = "rendererErrToLower" class="classes.RendererErrImpl">
+        <constructor-arg ref="preProcToLower"></constructor-arg>
+    </bean>
+
+    <bean id = "rendererStdToUpper" class="classes.RendererStandardImpl">
+        <constructor-arg ref="preProcToUpper"></constructor-arg>
+    </bean>
+    <bean id = "rendererStdToLower" class="classes.RendererStandardImpl">
+        <constructor-arg ref="preProcToLower"></constructor-arg>
+    </bean>
+
+    <bean id="printerWithPrefix" class="classes.PrinterWithPrefixImpl">
+        <constructor-arg ref="rendererStdToUpper"/>
+        <property name="prefix" value="PREFIX "/>
+    </bean>
+
+    <bean id="time" class="classes.CustomDateTime"/>
+
+    <bean id="getLdt"
+          factory-bean="time"
+          factory-method="getLdt" />
+
+    <bean id="printerWithTime" class="classes.PrinterWithDateTimeImpl">
+        <constructor-arg ref="rendererStdToUpper"/>
+        <property name="localDateTime" ref="getLdt"/>
+    </bean>
+
+    <bean id="printerWithPrefixLower" class="classes.PrinterWithPrefixImpl">
+        <constructor-arg ref="rendererStdToLower"/>
+        <property name="prefix" value="PREFIX "/>
+    </bean>
+
+    <bean id="printerWithTimeLower" class="classes.PrinterWithDateTimeImpl">
+        <constructor-arg ref="rendererStdToLower"/>
+        <property name="localDateTime" ref="getLdt"/>
+    </bean>
+
+    <bean id="printerErrWithPrefix" class="classes.PrinterWithPrefixImpl">
+        <constructor-arg ref="rendererErrToUpper"/>
+        <property name="prefix" value="PREFIX "/>
+    </bean>
+
+    <bean id="printerErrWithPrefixLower" class="classes.PrinterWithPrefixImpl">
+        <constructor-arg ref="rendererErrToLower"/>
+        <property name="prefix" value="PREFIX "/>
+    </bean>
+
+    <bean id="printerErrWithTime" class="classes.PrinterWithDateTimeImpl">
+        <constructor-arg ref="rendererErrToUpper"/>
+        <property name="localDateTime" ref="getLdt"/>
+    </bean>
+
+    <bean id="printerErrWithTimeLower" class="classes.PrinterWithDateTimeImpl">
+        <constructor-arg ref="rendererErrToLower"/>
+        <property name="localDateTime" ref="getLdt"/>
+    </bean>
+</beans>

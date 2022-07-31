@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Created-By: ldoctori
+Main-Class: edu.school21.printer.app.Main
